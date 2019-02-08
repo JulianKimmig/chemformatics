@@ -1,0 +1,22 @@
+{% extends "measurment_.html" %}
+
+{% block m_content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <select id="select_interpolation" name="opt_interpolation,method">
+            <option value="nearest" {% if measurement.options|get_item:"interpolation,method" is "nearest" %}selected{% endif %}>nearest</option>
+            <option value="linear" {% if measurement.options|get_item:"interpolation,method" is "linear" %}selected{% endif %}>linear</option>
+
+        </select>
+        <input type="number" name="opt_interpolation,resolution" value="{{ measurement.options|get_item:"interpolation,resolution" }}">
+
+        <div>
+            <table id="raw_structure_example"></table>
+        </div>
+        <input type="submit" value="Next">
+    </form>
+{% endblock %}
+
+
+{% block js %}
+{% endblock %}

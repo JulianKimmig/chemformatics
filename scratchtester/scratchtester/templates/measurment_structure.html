@@ -1,0 +1,10 @@
+{% extends "measurment_.html" %}
+
+{% block m_content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <input name="name" value="{{ measurement.name }}"/>
+        <input name="raw_data" type="file" size="50" accept="text/*">
+        <input type="submit" value="Next">
+    </form>
+{% endblock %}
