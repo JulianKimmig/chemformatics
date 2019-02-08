@@ -3,8 +3,28 @@
 {% block m_content %}
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-    <input name="name" value="{{ measurement.name }}"/>
-        <input name="raw_data" type="file" size="50" accept="text/*">
+        <select id="select_raw_structure" name="raw_structure" onchange="raw_struc_change()">
+            {% for rs in csv_strucs %}
+                <option value={{ rs.id }} {% if measurement.raw_structure.id == rs.id %} selected{% endif %}>{{ rs.name }}</option>
+            {% endfor %}
+        </select>
+
+        <div>
+            <table id="raw_structure_example"></table>
+        </div>
         <input type="submit" value="Next">
     </form>
+{% endblock %}
+
+
+{% block js %}
+    var raw_struc_options_html = {};
+    {% for rs in csv_strucs %}
+        raw_struc_options_html[{{rs.id}}] = "{{ rs.html|safe }}";
+    {% endfor %}
+
+    window.raw_struc_change = function () {
+    document.getElementById("raw_structure_example").innerHTML = raw_struc_options_html[document.getElementById("select_raw_structure").value];
+    };
+    window.raw_struc_change();
 {% endblock %}

@@ -1,0 +1,17 @@
+{
+    "Apps": {
+        "scratchtester": {
+            "base_url": "",
+            "install": "scratchtester.apps.ScratchtesterConfig",
+            "ws": true
+        }
+    },
+    "Instance": {
+        "allowed-hosts": [],
+        "debug": true,
+        "key": "ros-6c%-qdotadh)3i=!mve=evi!ch(2zmrl=xutbi23qey5(y"
+    },
+    "site": {
+        "title": "scratchtester"
+    }
+}

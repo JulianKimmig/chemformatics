@@ -1,2 +1,7 @@
 **/.ipynb_checkpoints
 __pycache__
+.idea/
+build/
+dist/
+*.build/
+*.dist/

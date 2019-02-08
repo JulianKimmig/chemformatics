@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="nav-item">
+            <a data-toggle="tab"  class="nav-link" href="#raw_data" role="tab" aria-controls="raw_data" aria-selected="true">
+                Raw data
+            </a
+            ></li>
+        <li class="nav-item">
+            <a data-toggle="tab" class="nav-link" href="#interpolation" role="tab" aria-controls="interpolation" aria-selected="false">
+                Interpolation
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="raw_data" class="tab-pane fade active show" role="tabpanel" aria-labelledby="raw_data-tab">
+            <h3>Raw data</h3>
+            <form id="raw_data_form" enctype="multipart/form-data">
+                <input name="raw_data" type="file" size="50" accept="text/*">
+                <input name="raw_data_n" type="text">
+
+                <button onclick="upload_raw()" type="button">upload</button>
+            </form>
+        </div>
+        <div id="interpolation" class="tab-pane fade" role="tabpanel" aria-labelledby="interpolation-tab">
+            <h3>Menu 2</h3>
+            <p>Some content in menu 2.</p>
+        </div>
+    </div>
+    <div id="permacontent">
+    <div id="progressbar"></div>
+    </div>
+{% endblock %}
+
+
+{% block jsf %}
+    <script src="{% static "js/scratchtester.js" %}"></script>
+{% endblock %}
+{% block js %}
+    window.raw_data_link = '{% url "scratchtester:get_data" id=measurement.id data="raw" %}'
+    window.raw_data_post = '{% url "scratchtester:post_data" id=measurement.id data="raw" %}'
+{% endblock %}

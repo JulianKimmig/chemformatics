@@ -1,5 +1,6 @@
 from  random import randint 
 import numpy as np
+from IPython.core.display import display
 from scipy.integrate import solve_ivp as solver
 from sympy import Symbol,init_printing,Eq,Add,pprint as sympprint
 from massplotter import mass_plot as mplot
@@ -129,7 +130,7 @@ class Reaction():
             for n,r in self.educts:
                 rate1=rate1*reacts[r]**n
         
-        rate2 = -self.k2
+        rate2 = self.k2
         if rate2 != 0:
             for n,r in self.products:
                 rate2=rate2*reacts[r]**n
@@ -207,9 +208,13 @@ class ReactionSet():
         self.kinetic_solve = solver(da,(0,time),self.c0s,max_step=min_resolution)
         return self.kinetic_solve
     
-    def plot_kinetics(self,add_normed=False):
+    def plot_kinetics(self,normed=False):
         if self.kinetic_solve is None:
             self.solve_kinetics()
-        mplot(self.kinetic_solve.t,self.kinetic_solve.y, title="kinetic",labels=self.reacts)
-        if add_normed:
+
+        if normed:
             mplot(self.kinetic_solve.t,self.kinetic_solve.y, title="kinetic normed",norm=True,labels=self.reacts)
+        else:
+            mplot(self.kinetic_solve.t,self.kinetic_solve.y, title="kinetic",labels=self.reacts)
+
+

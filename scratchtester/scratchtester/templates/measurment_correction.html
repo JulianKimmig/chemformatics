@@ -1,6 +1,7 @@
 {% extends "measurment_.html" %}
 
 {% block m_content %}
+    <image src="{% url "scratchtester:image" id=measurement.id data='interpolated'%}"></image>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <select id="select_interpolation" name="opt_interpolation,method">

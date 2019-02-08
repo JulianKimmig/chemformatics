@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}main{% endblock %}
+{% block content %}
+    <a href="{% url "scratchtester:measurment" id=0 option="start"%}">new</a>
+    <table>
+    {% for ex in experiments %}
+        <tr><td>{{ ex.title}}</td></tr>
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,24 @@
+2019-01-21 11:37:45,425 INFO scratchtester_gui.py(36) Initalization
+2019-01-21 11:37:45,919 INFO scratchtester_gui.py(59) Generate UI
+2019-01-21 11:37:45,919 INFO update_raw.py(39) generate raw
+2019-01-21 11:37:45,920 INFO update_interpolation.py(35) generate inpterpolation
+2019-01-21 11:37:45,921 INFO update_correction.py(81) generate correction
+2019-01-21 11:37:46,116 INFO update_3d.py(59) generate 3D
+2019-01-21 11:37:46,555 INFO scratchtester_gui.py(66) Load filelast_opened.json
+2019-01-21 11:37:46,556 INFO scratch_reader.py(233) open file last_opened.json
+2019-01-21 11:37:46,556 INFO update_raw.py(9) laod raw
+2019-01-21 11:37:46,557 INFO scratch_reader.py(67) read raw
+2019-01-21 11:37:51,892 INFO update_interpolation.py(10) load interpolation
+2019-01-21 11:37:52,010 INFO update_correction.py(198) set correction rar image
+2019-01-21 11:37:52,010 INFO sidefunctions.py(83) plot surface
+2019-01-21 11:37:52,157 INFO update_correction.py(8) load correction
+2019-01-21 11:37:52,158 INFO scratch_reader.py(146) replaceCP 0.0 0.0 96.66000000000001
+2019-01-21 11:37:52,167 INFO scratch_reader.py(146) replaceCP 0.0 7934.0 57.825
+2019-01-21 11:37:52,172 INFO scratch_reader.py(146) replaceCP 2047.0 0.0 101.01
+2019-01-21 11:37:52,174 INFO scratch_reader.py(146) replaceCP 2047.0 7934.0 61.265
+2019-01-21 11:37:52,313 INFO scratch_reader.py(206) calc corr surf
+2019-01-21 11:38:00,037 INFO update_correction.py(206) update correction surface
+2019-01-21 11:38:00,037 INFO sidefunctions.py(83) plot surface
+2019-01-21 11:38:00,162 INFO sidefunctions.py(83) plot surface
+2019-01-21 11:38:00,286 INFO update_3d.py(176) load 3d
+2019-01-21 11:38:00,287 INFO update_3d.py(112) update 3d image
